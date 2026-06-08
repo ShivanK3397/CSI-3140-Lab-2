@@ -1,0 +1,212 @@
+/*Global*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #1f1f1f;
+  background-color: #f7f7fb;
+}
+
+.container {
+  width: min(100% - 2rem, 1100px);
+  margin: 0 auto;
+}
+
+/*Test*/
+
+h1, h2, h3 {
+  margin-top: 0;
+  color: #1a1a2e;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/*Header*/
+
+header {
+  background: #1a1a2e;
+  color: white;
+  padding: 1rem 0;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/*Navigation*/
+nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+nav a:hover {
+  background: #33335a;
+}
+
+nav a:focus {
+  outline: 3px solid #8f001a;
+  outline-offset: 2px;
+}
+
+/*Main*/
+
+main {
+  width: min(100% - 2rem, 900px);
+  margin: 2rem auto;
+}
+
+/*Section*/
+
+section {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/*List*/
+
+ul {
+  padding-left: 1.25rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+ul li a {
+  color: #1a1a2e;
+  text-decoration: underline;
+}
+
+ul li a:hover {
+  color: #8f001a;
+}
+
+/*Links*/
+
+a {
+  transition: all 0.2s ease;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #8f001a;
+  outline-offset: 2px;
+}
+
+
+
+a[href^="mailto"] {
+  font-weight: bold;
+  color: #8f001a;
+}
+
+/*Footer*/
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1a1a2e;
+  color: white;
+  margin-top: 2rem;
+}
+
+/*Responsive Design*/
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav a {
+    text-align: center;
+  }
+
+  main {
+    width: calc(100% - 1rem);
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
+
+/*Components*/
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Navigation*/
+.main-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Site header */
+.site-header {
+  background: #1a1a2e;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.site-title {
+  margin: 0;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1a1a2e;
+  color: white;
+}
+
+/* Lists */
+.link-list,
+.feature-list {
+  padding-left: 1.25rem;
+}
+
+/* Image styling */
+.image-card img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
