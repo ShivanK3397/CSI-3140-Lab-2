@@ -210,3 +210,52 @@ footer {
   margin: 0 auto;
   border-radius: 8px;
 }
+
+
+/* Schedule */
+
+main section table {
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+ 
+main section table caption {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+ 
+main section table th,
+main section table td {
+  border: 1px solid #d0d0e0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+ 
+main section table thead tr {
+  background-color: #1a1a2e;
+  color: white;
+}
+ 
+main section table thead th {
+  border-color: #1a1a2e;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+ 
+main section table tbody tr:nth-child(even) {
+  background-color: #f0f0f8;
+}
+ 
+main section table tbody tr:hover {
+  background-color: #e4e4f4;
+  transition: background 0.2s ease;
+}
+ 
+main section table tbody th {
+  font-weight: 600;
+  color: #1a1a2e;
+}
