@@ -4,72 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - uOttawa Chess Club</title>
-  
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>uOttawa Chess Club</h1>
-    <nav aria-label="Main navigation">
+  <header class="site-header">
+    <h1 class="site-title">uOttawa Chess Club</h1>
+
+    <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="schedule.html">Schedule</a>
       <a href="registration.html">Registration</a>
-      
     </nav>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="card">
       <h2>Registration</h2>
-      <form action="#" method="post">
+      <form class="reg-form" action="#" method="post">
         <fieldset>
           <legend>Player Information</legend>
 
-          <label for="full-name">Full name</label>
-          <input type="text" id="full-name" name="fullName" required minlength="2" maxlength="100">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="full-name">Full name</label>
+              <input type="text" id="full-name" name="fullName" required minlength="2" maxlength="100">
+            </div>
 
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" required>
+            <div class="form-field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
 
-          <label for="phone">Phone number</label>
-          <input type="tel" id="phone" name="phone" pattern="\+[0-9\- ]{7,20}" placeholder="+1-613-461-3000" required>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" pattern="\+[0-9\- ]{7,20}" placeholder="+1-613-461-3000" required>
+            </div>
 
-          <label for="program">Year of study</label>
-          <select id="program" name="program" required>
-            <option value="">Select a year</option>
-            <option value="first-year">First Year</option>
-            <option value="second-year">Second Year</option>
-            <option value="third-year">Third Year</option>
-            <option value="fourth-year">Fourth Year</option>
-            <option value="fifth-year">Fifth Year </option>
-          </select>
+            <div class="form-field">
+              <label for="program">Year of study</label>
+              <select id="program" name="program" required>
+                <option value="">Select a year</option>
+                <option value="first-year">First Year</option>
+                <option value="second-year">Second Year</option>
+                <option value="third-year">Third Year</option>
+                <option value="fourth-year">Fourth Year</option>
+                <option value="fifth-year">Fifth Year</option>
+              </select>
+            </div>
+          </div>
         </fieldset>
 
         <fieldset>
-          <legend> Diversity Information</legend>
-          <p>Gender</p>
-          <label>
-            <input type="radio" name="gender" value="male" >
-            Male
-          </label>
-          <label>
-            <input type="radio" name="gender" value="female">
-            Female
-          </label>
-             
-         
+          <legend>Diversity Information</legend>
+          <p class="field-label">Gender</p>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="gender" value="male">
+              Male
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="gender" value="female">
+              Female
+            </label>
+          </div>
         </fieldset>
 
-        <label for="comments">Additional comments (Experience level,etc) </label>
-        <textarea id="comments" name="comments" rows="4" maxlength="500" placeholder="Additional comments"></textarea>
+        <div class="form-field">
+          <label for="comments">Additional comments (Experience level, etc.)</label>
+          <textarea id="comments" name="comments" rows="4" maxlength="500" placeholder="Additional comments"></textarea>
+        </div>
 
-        <button type="submit">Submit registration</button>
+        <button class="btn-primary" type="submit">Submit registration</button>
       </form>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 CSI 3140 Lab 1 — uOttawa Chess Club</p>
+  <footer class="site-footer">
+    <p>&copy; 2026 CSI 3140 Lab 2 — uOttawa Chess Club</p>
   </footer>
 </body>
 </html>
