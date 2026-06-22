@@ -1,75 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - uOttawa Chess Club</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - uOttawa Chess Club</title>
+    <link rel="stylesheet" href="styles.css">
   
+   
 </head>
 <body>
-  <header>
+
+<header>
     <h1>uOttawa Chess Club</h1>
+
     <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="registration.html">Registration</a>
-      
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="registration.html">Registration</a>
     </nav>
-  </header>
+</header>
 
-  <main>
+<main>
     <section>
-      <h2>Registration</h2>
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Player Information</legend>
+        <h2>Registration</h2>
 
-          <label for="full-name">Full name</label>
-          <input type="text" id="full-name" name="fullName" required minlength="2" maxlength="100">
+        <form id="registration-form" action="#" method="post">
 
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" required>
+            <fieldset>
+                <legend>Player Information</legend>
 
-          <label for="phone">Phone number</label>
-          <input type="tel" id="phone" name="phone" pattern="\+[0-9\- ]{7,20}" placeholder="+1-613-461-3000" required>
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="fullName">
+                <span class="error" id="name-error"></span>
 
-          <label for="program">Year of study</label>
-          <select id="program" name="program" required>
-            <option value="">Select a year</option>
-            <option value="first-year">First Year</option>
-            <option value="second-year">Second Year</option>
-            <option value="third-year">Third Year</option>
-            <option value="fourth-year">Fourth Year</option>
-            <option value="fifth-year">Fifth Year </option>
-          </select>
-        </fieldset>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+                <span class="error" id="email-error"></span>
 
-        <fieldset>
-          <legend> Diversity Information</legend>
-          <p>Gender</p>
-          <label>
-            <input type="radio" name="gender" value="male" >
-            Male
-          </label>
-          <label>
-            <input type="radio" name="gender" value="female">
-            Female
-          </label>
-             
-         
-        </fieldset>
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+1-613-461-3000">
+                <span class="error" id="phone-error"></span>
 
-        <label for="comments">Additional comments (Experience level,etc) </label>
-        <textarea id="comments" name="comments" rows="4" maxlength="500" placeholder="Additional comments"></textarea>
+                <label for="program">Year of Study</label>
+                <select id="program" name="program">
+                    <option value="">Select a year</option>
+                    <option value="first-year">First Year</option>
+                    <option value="second-year">Second Year</option>
+                    <option value="third-year">Third Year</option>
+                    <option value="fourth-year">Fourth Year</option>
+                    <option value="fifth-year">Fifth Year</option>
+                </select>
+                <span class="error" id="program-error"></span>
+            </fieldset>
 
-        <button type="submit">Submit registration</button>
-      </form>
+            <fieldset>
+                <legend>Diversity Information</legend>
+
+                <p>Gender</p>
+
+                <label>
+                    <input type="radio" name="gender" value="male">
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" value="female">
+                    Female
+                </label>
+            </fieldset>
+
+            <label for="comments">
+                Additional Comments (Experience Level, etc.)
+            </label>
+
+            <textarea
+                id="comments"
+                name="comments"
+                rows="4"
+                maxlength="500"
+                placeholder="Additional comments"></textarea>
+
+            <button type="submit">
+                Submit Registration
+            </button>
+
+            <p id="success-message"></p>
+
+        </form>
     </section>
-  </main>
+</main>
 
-  <footer>
+<footer>
     <p>&copy; 2026 CSI 3140 Lab 1 — uOttawa Chess Club</p>
-  </footer>
+</footer>
+
+<script src="registration.js"></script>
+
 </body>
 </html>

@@ -166,6 +166,24 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+.error{
+  color: red;
+  font-size: 0.9em;
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+.input-error {
+  border: 2px solid red;
+}
+
+  #success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
 /* Navigation*/
 .main-nav {
   display: flex;
@@ -259,3 +277,5 @@ main section table tbody th {
   font-weight: 600;
   color: #1a1a2e;
 }
+
+       
