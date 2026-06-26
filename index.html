@@ -22,12 +22,21 @@
   <main class="container">
     <section class="card">
       <h2 id="welcome-message">Welcome</h2>
-      <section class="card">
-      <h2>Announcements</h2>
-      <ul id="announcements"></ul>
+      <button type="button" id="toggle-announcements" class="btn-secondary" aria-expanded="true">
+        Hide Announcements
+      </button>
+      <section class="card collapsible-panel" id="announcements-panel">
+        <h2>Announcements</h2>
+        <ul id="announcements"></ul>
       </section>
       <p>Welcome to <strong>uOttawa Chess Club</strong>, a community for chess enthusiasts at the University of Ottawa.</p>
       <p>Use the navigation above to learn more, view the schedule, and register.</p>
+
+      <section class="card featured-tip">
+        <h2>Featured Chess Tip</h2>
+        <p id="tip-text"></p>
+        <button type="button" id="next-tip" class="btn-primary">Show Next Tip</button>
+      </section>
 
         <ul class="link-list">
           <li><a href="about.html">About the club</a></li>

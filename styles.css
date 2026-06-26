@@ -174,6 +174,36 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #1a1a2e;
+  border: 1px solid #1a1a2e;
+  padding: 0.75rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+.collapsible-panel.is-hidden {
+  display: none;
+}
+
+.featured-tip {
+  border-left: 4px solid #8f001a;
+}
+
+.featured-tip p {
+  margin-bottom: 1rem;
+}
+
 .error{
   color: red;
   font-size: 0.9em;
@@ -226,6 +256,36 @@ footer {
 .link-list,
 .feature-list {
   padding-left: 1.25rem;
+}
+
+.schedule-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.schedule-filter {
+  background: #f0f0f8;
+  color: #1a1a2e;
+  border: 1px solid #c4c4d6;
+  padding: 0.6rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.schedule-filter.active,
+.schedule-filter:hover {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+.schedule-status {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+  color: #8f001a;
 }
 
 /* Image styling */
@@ -312,6 +372,20 @@ main section table tbody th {
   border-radius: 8px;
   padding: 1rem 1.25rem 1.25rem;
   margin: 0 0 1.25rem 0;
+}
+
+.registration-summary,
+.selection-feedback {
+  background: #f0f0f8;
+  border: 1px solid #d0d0e0;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.registration-summary p,
+.selection-feedback {
+  margin: 0;
 }
 
 .reg-form legend {
@@ -474,6 +548,34 @@ body.dark-mode .card,
 body.dark-mode section {
   background: #1e1e2e;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .btn-secondary {
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: #e0e0e0;
+  color: #1e1e2e;
+}
+
+body.dark-mode .schedule-filter {
+  background: #2c2c3e;
+  color: #e0e0e0;
+  border-color: #555577;
+}
+
+body.dark-mode .schedule-filter.active,
+body.dark-mode .schedule-filter:hover {
+  background: #e0e0e0;
+  color: #1e1e2e;
+}
+
+body.dark-mode .registration-summary,
+body.dark-mode .selection-feedback {
+  background: #2c2c3e;
+  border-color: #555577;
 }
 
 /* Nav links */

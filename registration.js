@@ -1,23 +1,78 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("registration-form");
+    const fullName = document.getElementById("full-name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const program = document.getElementById("program");
+    const comments = document.getElementById("comments");
+    const selectionFeedback = document.getElementById("selection-feedback");
+    const preview = document.getElementById("registration-preview");
+    const commentCount = document.getElementById("comment-count");
+    const submitButton = document.querySelector("button[type='submit']");
+
+    function updatePreview() {
+        if (!preview) return;
+
+        const nameText = fullName.value.trim() || "your name";
+        const yearText = program.value || "year of study";
+        const emailText = email.value.trim() || "email address";
+
+        preview.textContent = `${nameText} · ${yearText} · ${emailText}`;
+    }
+
+    function updateCommentCount() {
+        if (!commentCount) return;
+
+        commentCount.textContent = `${comments.value.length} / ${comments.maxLength} characters`;
+    }
+
+    function updateSelectionFeedback() {
+        if (!selectionFeedback) return;
+
+        const selectedGender = document.querySelector("input[name='gender']:checked");
+        const yearText = program.value ? program.options[program.selectedIndex].text : "No year selected yet";
+
+        selectionFeedback.textContent = selectedGender
+            ? `Selected gender: ${selectedGender.value}. ${yearText}.`
+            : `${yearText}. Choose an option to personalize your registration.`;
+    }
+
+    [fullName, email, phone].forEach(function (field) {
+        field.addEventListener("input", function () {
+            updatePreview();
+        });
+    });
+
+    comments.addEventListener("input", function () {
+        updateCommentCount();
+    });
+
+    program.addEventListener("change", function () {
+        updatePreview();
+        updateSelectionFeedback();
+    });
+
+    document.querySelectorAll("input[name='gender']").forEach(function (option) {
+        option.addEventListener("change", function () {
+            updateSelectionFeedback();
+        });
+    });
+
+    updatePreview();
+    updateCommentCount();
+    updateSelectionFeedback();
 
         form.addEventListener("submit", function (event) {
             event.preventDefault();
 
             let valid = true;
 
-            const fullName = document.getElementById("full-name");
-            const email = document.getElementById("email");
-            const phone = document.getElementById("phone");
-            const program = document.getElementById("program");
-
             const nameError = document.getElementById("name-error");
             const emailError = document.getElementById("email-error");
             const phoneError = document.getElementById("phone-error");
             const programError = document.getElementById("program-error");
             const successMessage = document.getElementById("success-message");
-            const submitButton = document.querySelector("button[type='submit']");
             
 
             // Clear previous messages
@@ -89,14 +144,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 successMessage.textContent =
                     "Registration submitted successfully!";
                 form.reset();
+                updatePreview();
+                updateCommentCount();
+                updateSelectionFeedback();
+                
+                // button disabled briefly after a successful submit
+                submitButton.setAttribute("disabled", "true");
+                setTimeout(function () {
+                    submitButton.removeAttribute("disabled");
+                }, 3000);
             }
-
-            //button disable to prevent multiple submissions
-            submitButton.setAttribute("disabled", "true");
-            // Re-enable after reset
-            setTimeout(function () {
-            submitButton.removeAttribute("disabled");
-            }, 3000);
         })
 
 });

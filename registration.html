@@ -25,6 +25,11 @@
     <section class="card">
         <h2>Registration</h2>
 
+        <div class="registration-summary" aria-live="polite">
+            <p><strong>Live preview:</strong> <span id="registration-preview">Start typing your details below.</span></p>
+            <p id="comment-count">0 / 500 characters</p>
+        </div>
+
         <form id="registration-form" class="reg-form" action="#" method="post">
 
             <fieldset>
@@ -84,6 +89,8 @@
                 rows="4"
                 maxlength="500"
                 placeholder="Additional comments"></textarea>
+
+            <p id="selection-feedback" class="selection-feedback" aria-live="polite"></p>
 
             <button type="submit">
                 Submit Registration
